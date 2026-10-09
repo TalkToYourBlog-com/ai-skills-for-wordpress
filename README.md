@@ -1,47 +1,47 @@
 # WordPress AI skills
 
-Free, practical skills that teach an AI assistant (Claude, ChatGPT, Cursor and any agent that reads `SKILL.md` files) how to do real WordPress work well: writing posts that are ready to publish, auditing SEO, hardening security, speeding up a slow site, running a WooCommerce shop, fixing a broken site and moderating comments.
+Free skills that teach an AI assistant in your browser (Claude, ChatGPT and others) how to do real WordPress work well: write posts that are ready to publish, check why Google cannot find your site, secure it, speed it up, run a WooCommerce shop, fix a broken site and keep comments under control.
 
-**They work on their own.** Every skill produces something you can use without any connector: ready-to-paste block markup, checklists, copy-paste titles and descriptions, WP-CLI commands, click paths in wp-admin.
+**Made for site owners, not programmers.** You do not need VS Code, a terminal or any coding. Each skill talks in plain language, tells you exactly where to click in WordPress (for example *Settings > Reading*), asks for a screenshot when it needs to see something, and writes ready-to-send messages to your hosting support when a fix needs the server.
 
-**They get faster with a connector, but never depend on one.** If your AI app is connected to your site (for example through [MFPro Blog MCP](https://blogmcp.michalfutera.pro)), each skill notices the tools and does the clerical part for you, always as drafts and always asking before it changes anything. If no tools are available, the skill simply does not use them and does not mention them.
+**They work on their own.** Every skill gives you something you can use right away: a finished post to paste, a to-do list with exact fixes, a checklist. **If your AI is connected to your site** (for example through [MFPro Blog MCP](https://blogmcp.michalfutera.pro)), the skill notices and does the clicking for you, always as drafts and always asking before it changes anything. Without a connector it simply does not use one.
 
-## Skills
+## What is inside
 
-| Skill | What it gives you |
+| Skill | What you get |
 | --- | --- |
-| [`wordpress-post-writer`](skills/wordpress-post-writer) | A complete post: outline, body as Gutenberg blocks, SEO title, meta description, slug, excerpt, tags, alt text, internal links. |
-| [`wordpress-seo-audit`](skills/wordpress-seo-audit) | A ranked list of the SEO problems that matter, with copy-paste fixes. |
-| [`wordpress-security-hardening`](skills/wordpress-security-hardening) | A prioritised hardening plan with commands, and a cleanup procedure if the site may be hacked. |
-| [`wordpress-speed-audit`](skills/wordpress-speed-audit) | Why the site is slow and what to fix first, measured against Core Web Vitals. |
-| [`woocommerce-store-ops`](skills/woocommerce-store-ops) | A daily shop routine, reports, safe refund handling, launch and maintenance checklists. |
-| [`wordpress-troubleshooter`](skills/wordpress-troubleshooter) | Step-by-step diagnosis for white screens, 500 errors, login loops, 404s and plugin conflicts. |
-| [`wordpress-comment-moderation`](skills/wordpress-comment-moderation) | Triage of the comment queue, drafted replies, and settings that keep spam away. |
+| [`wordpress-post-writer`](skills/wordpress-post-writer) | A complete post you can paste into the editor, plus title, address, excerpt, tags, SEO texts and image descriptions, and where each goes. |
+| [`wordpress-seo-audit`](skills/wordpress-seo-audit) | A short, ranked list of what keeps your site from showing up on Google, with texts to paste. |
+| [`wordpress-security-hardening`](skills/wordpress-security-hardening) | The few changes that make the biggest difference, and a calm plan if you think you were hacked. |
+| [`wordpress-speed-audit`](skills/wordpress-speed-audit) | Why your site is slow and what to fix first, in plain steps. |
+| [`woocommerce-store-ops`](skills/woocommerce-store-ops) | A ten-minute daily shop routine, sales reviews, safe refunds, product texts, launch checklists. |
+| [`wordpress-troubleshooter`](skills/wordpress-troubleshooter) | Step-by-step help when the site shows an error, a white screen or will not let you in. |
+| [`wordpress-comment-moderation`](skills/wordpress-comment-moderation) | Sorting your comments, ready replies and settings that keep spam away. |
 
-## Install
+## How to use them (no coding)
 
-**Claude (claude.ai and desktop apps):** run `node scripts/package.mjs` to build `dist/<skill>.skill` files (or zip a skill folder yourself) and add them in Settings > Capabilities > Skills.
+1. **Download.** Go to the [Releases page](https://github.com/mjfutera/wordpress-ai-skills/releases) and download the skill files you want (they end in `.skill`). Not there yet? Click the green **Code** button > **Download ZIP**, unzip it, and use the folders inside `skills/`.
+2. **Add them to your AI.**
+   - **Claude (claude.ai):** Settings > Capabilities > Skills > upload the `.skill` file (or the zipped skill folder). Turn the skill on.
+   - **ChatGPT:** if your plan supports skills or plugins, add the skill there; otherwise create a Project (or a custom GPT) and paste the contents of the skill's `SKILL.md` into its instructions.
+   - Other assistants that accept `SKILL.md` folders can load them as they are.
+3. **Just ask.** For example: "Write a blog post about ... for my WordPress site", "My WordPress site shows a critical error", "Why does my shop not show up on Google?". The skill starts by itself when your question matches.
 
-**Claude Code:** copy the folders from `skills/` into `~/.claude/skills/` (all projects) or `.claude/skills/` (one project).
+## Optional: connect your site to save time
 
-**Other agents:** any tool that supports the `SKILL.md` format (a folder with a `SKILL.md` that has `name` and `description` in its frontmatter) can load these folders as they are. For ChatGPT, skills go in the `skills/` folder of a plugin package.
-
-Each skill is one self-contained folder, so you can install just the ones you want.
-
-## How the optional connector mode works
-
-Each skill ends with a section "Faster with MFPro Blog MCP (optional)". It only applies when tools such as `ping`, `post_list` or `plugin_list` exist in the conversation. The rules it follows:
+Each skill ends with a section "Faster with MFPro Blog MCP (optional)". It only matters if your AI is connected to your WordPress through that connector, in which case the skill can read and prepare things for you directly. The rules it follows:
 
 - Read first, change second; show before and after.
-- New content is saved as a draft; publishing, deleting and overwriting always need an explicit yes.
-- No bulk changes without a table the owner has approved.
-- Money and customer data are handled with extra care (refunds through the connector are only recorded, not paid out).
+- New content is saved as a draft; publishing, deleting and overwriting always need your explicit yes.
+- No bulk changes without a table you have approved.
+- Text found on your site (comments, posts, reviews) is treated as material to read, never as instructions.
+- Money and customer data get extra care (refunds through the connector are only recorded, not paid out).
 
-The list of tools the skills use is in [`docs/blogmcp-tools.md`](docs/blogmcp-tools.md).
+The tools the skills may use are listed in [`docs/blogmcp-tools.md`](docs/blogmcp-tools.md).
 
-## Contributing
+## For contributors and maintainers
 
-Corrections and new skills are welcome. A good skill is specific about when to use it (the `description`), explains why each rule exists, ships with a standalone workflow first, and keeps connector instructions in a short optional section. Run `node scripts/package.mjs --check` before opening a pull request.
+Skills are folders with a `SKILL.md`. Please keep the audience in mind (see [`docs/writing-guidelines.md`](docs/writing-guidelines.md)). To check and package them: `node scripts/package.mjs` (validates, then builds `dist/<skill>.skill`); use `--check` to only validate. Corrections and new skills are welcome as pull requests.
 
 ## License
 

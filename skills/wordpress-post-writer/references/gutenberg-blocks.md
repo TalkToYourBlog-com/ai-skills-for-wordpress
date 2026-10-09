@@ -1,4 +1,6 @@
-# Gutenberg block markup cheat sheet
+# Gutenberg block markup cheat sheet (advanced)
+
+Use this only when the user specifically needs block code (a special layout, or content sent through a connector). Most site owners should simply copy the formatted post text from the chat and paste it into the editor; WordPress turns headings and lists into blocks by itself. Never ask a non-technical user to paste code unless they asked for it.
 
 WordPress stores block content as HTML wrapped in comment delimiters. If the delimiters are missing, the editor shows the content as a single "Classic" block; if an attribute or class is wrong, the editor shows "This block contains unexpected or invalid content". Stick to the patterns below, which are the core block formats.
 

@@ -1,57 +1,57 @@
-# On-site SEO checklist for WordPress
+# On-site SEO checklist, with where to look
 
-Use the checks that apply; skip the rest. Thresholds are guidance, not rules; search engines truncate by pixel width, not by character count.
+Use the checks that apply; skip the rest. Thresholds are guidance, not rules; Google shortens titles by pixel width, not by character count. Everything in the "How to check" column can be done by a non-technical person in a browser.
 
-## Indexability (check first)
+## Can Google show the site at all? (check first)
 
-| Check | Where | Healthy | Problem looks like |
+| Check | How to check | Healthy | Problem looks like |
 | --- | --- | --- | --- |
-| Search visibility | Settings > Reading | "Discourage search engines" **unticked** | ticked on a live site (adds `noindex`) |
-| robots.txt | `/robots.txt` | allows crawling of content; points to the sitemap | `Disallow: /` on the live site |
-| Sitemap | `/wp-sitemap.xml` or SEO plugin sitemap | lists published posts, pages, categories; returns 200 | 404, empty, or lists noindex pages |
-| Meta robots | page source / HTTP headers | no `noindex` on pages that should rank | `noindex` left over from staging |
-| Canonical | `<link rel="canonical">` | points to the page itself (or the preferred duplicate) | points to the homepage, another domain or a staging URL |
-| Single version | open `http`, `https`, `www`, non-`www` | all redirect (301) to one version | several versions return 200 |
-| HTTPS | any page | valid certificate, no mixed content | warnings about insecure resources |
-| Pagination, archives | tag, date, author archives | thin archives set to noindex or removed | thousands of thin tag pages indexed |
-| Permalinks | Settings > Permalinks | readable (`/post-name/`) | `?p=123` URLs |
+| Search visibility | wp-admin > Settings > Reading | "Discourage search engines from indexing this site" **unticked** | ticked on a live site |
+| Pages blocked by the SEO plugin | Open a post > SEO box > advanced section | "Allow search engines to show this page" is yes | set to noindex |
+| One address only | type `http://`, `https://`, with and without `www` in the browser | all end up on the same address | different versions open separately |
+| Padlock | open the site | closed padlock, no warnings | "Not secure" or mixed content warnings |
+| Sitemap | open `theiraddress.com/wp-sitemap.xml` or the SEO plugin's sitemap | a list of pages appears | not found or empty |
+| What Google has | Google search `site:theiraddress.com` | roughly your pages | nothing, or thousands of junk pages |
+| Search Console | Pages report | most real pages "Indexed" | many "Excluded" with reasons such as noindex or redirect |
+| Address format | Settings > Permalinks | "Post name" | numbers like `?p=123` |
 
 ## Titles and descriptions
 
-- Title: unique per page, about 50-60 characters, main topic first, brand last.
-- Meta description: unique, about 140-155 characters, says what the reader gets; it influences clicks, not rankings.
-- Duplicate or default titles ("Home - Site name", "Untitled", "Page 2") are the most common quick win.
+- Title: unique per page, about 50-60 characters, the topic first, brand last.
+- Description: unique, about 140-155 characters, tells the reader what they get. It influences clicks, not rankings.
+- Quick check: search `site:theiraddress.com` and look for repeated or default titles.
 
 ## Content structure
 
-- One H1 per page (usually the post title); H2 and H3 in order, no skipping for styling.
-- First 100 words say what the page is about.
-- Thin pages (a few lines) either get expanded, merged or set to noindex.
-- Two pages targeting the same question compete; merge or differentiate.
+- One main heading per page (usually the post title), subheadings in order.
+- The first paragraph says what the page is about.
+- Thin pages (a few lines) should be expanded, merged into a stronger page, or hidden from Google.
+- Two pages answering the same question compete; merge or differentiate them.
 
 ## Images
 
-- Descriptive file names and alt text that describe what is shown (decorative images: empty alt).
-- Sensible dimensions; modern formats (WebP/AVIF) where supported; lazy loading is on by default in WordPress core.
+- Alt text that describes the picture in one sentence (decorative images: leave empty).
+- File size sensible; very large photos slow the page (see the speed skill).
+- How to check: Media > Library > open a picture > "Alt Text" field.
 
 ## Links
 
-- Every important page is reachable within three clicks and has internal links pointing to it. Find orphans by comparing the sitemap with pages that receive internal links.
-- Anchor text describes the target; avoid "click here".
-- Fix broken internal links and long redirect chains (more than one hop).
+- Each important page is linked from other pages and from the menu.
+- Link text says where it goes ("our guide to pricing"), not "click here".
+- Broken links: a free online link checker, or a plugin that lists them; fix or remove.
 
-## Structured data and social
+## Extra signals
 
-- Article and Organization schema usually come from the SEO plugin; verify with Google's Rich Results Test rather than assuming.
-- Open Graph image and title set for share previews.
+- Structured data (the little extra info Google shows, like ratings): usually comes from the SEO plugin; test a page in Google's free Rich Results Test.
+- Social sharing image set in the SEO plugin.
 
 ## Speed and mobile (pointers)
 
-- Core Web Vitals: LCP 2.5 s or less, INP 200 ms or less, CLS 0.1 or less (field data in Search Console beats lab data).
-- The site must be fully usable on a phone.
+- Target for real visitors: main content loaded in 2.5 s or less, page responds within 0.2 s, no layout jumps.
+- Test with PageSpeed Insights (free, paste the address) and look at the section about real users when it exists.
 
-## Measuring after the fixes
+## Measuring afterwards
 
-- Search Console > Pages (indexing) for indexed versus excluded counts and reasons.
-- Search Console > Performance for clicks, impressions, CTR and queries per page.
-- Re-check in 4-6 weeks; do not judge a change after three days.
+- Search Console > Pages: indexed versus excluded and the reasons.
+- Search Console > Performance: clicks, impressions, average position per page.
+- Check again in 4-6 weeks; do not judge a change after three days.
