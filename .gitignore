@@ -1,0 +1,6 @@
+dist/
+node_modules/
+*.zip
+*.skill
+.DS_Store
+Thumbs.db
