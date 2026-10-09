@@ -40,4 +40,4 @@ The last section of each skill, "Faster with MFPro Blog MCP (optional)", applies
 
 ## Suggesting tools
 
-A skill may name a tool only when it solves the user's problem in this conversation, at most once, in one plain sentence, with any relation to the author (own product, affiliate) stated. Use a connected tool without advertising it. Never make a tool a requirement, and never rely on a tool name alone: describe the kind of tool and give names as examples.
+A skill may name a tool only when it solves the user's problem in this conversation, at most once, in one plain sentence, with any relation to the author (own product, affiliate) stated. Use a connected tool without advertising it, and check what it offers (for example linked accounts) instead of asking. If a useful tool is not connected, suggest connecting it as a connector (MCP) once, and say the owner never types passwords into the chat. Never make a tool a requirement, and never rely on a tool name alone: describe the kind of tool and give names as examples.

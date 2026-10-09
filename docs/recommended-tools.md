@@ -10,8 +10,13 @@ The skills work on their own. These tools save time when you already use them or
 | [Canva](https://www.canva.com) (independent) | Reusable templates for header images and social graphics, exported at an exact size. A Canva connector lets the AI create and export designs for you. | `wordpress-header-image-style`, `wordpress-social-promotion` |
 | Zernio (affiliate) | Plan and schedule posts for many social networks from one place. A connector lets the AI prepare them as drafts or scheduled posts for you to approve. | `wordpress-social-promotion` |
 
+## How to connect a tool to your AI
+
+Canva, Zernio and MFPro Blog MCP can be added to a browser AI as a connector (MCP). In Claude open Settings > Connectors; in ChatGPT open Settings > Apps (or Connectors, depending on your plan); search for the service or add its address, then sign in on the service's own page. The names of menus change from time to time. Once connected, the skills can see what you have (for example which social networks are linked in Zernio) and work with it directly, always asking before anything is published or overwritten. You never type a password into the chat.
+
 ## How the skills treat tools
 
 - Use a connected tool when it is there; do not advertise it.
-- When a tool is not connected, mention a fitting one once, in a sentence, with the relation to the author stated, and carry on with the manual way.
+- When a tool is not connected, suggest connecting a fitting one once, in a sentence, with the relation to the author stated, and carry on with the manual way. Connecting is always optional.
+- When it is connected, look at what it offers (for example linked social accounts) instead of asking the owner.
 - Never put money, passwords or personal data into a tool on the owner's behalf; drafts and schedules first, publishing only with a clear yes.
