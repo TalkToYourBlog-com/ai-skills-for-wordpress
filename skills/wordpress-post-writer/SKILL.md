@@ -56,7 +56,7 @@ Does the first paragraph keep the promise of the title? Is every claim supportab
 
 ## Voice and header image
 
-If the owner has a saved style card (from the `wordpress-author-voice` skill), write in that voice. If they do not and say the text does not sound like them, offer to build one. Likewise offer `wordpress-header-image-style` when they need a matching header image. Offer once, do not insist.
+If the owner has a saved style card (from the `wordpress-author-voice` skill), write in that voice. If they do not and say the text does not sound like them, offer to build one. Likewise offer `wordpress-header-image-style` when they need a matching header image. After the post is ready, offer `wordpress-social-promotion` for social media texts. Offer once, do not insist.
 
 ## Faster with MFPro Blog MCP (optional)
 

@@ -37,3 +37,7 @@ The last section of each skill, "Faster with MFPro Blog MCP (optional)", applies
 ## Format
 
 `SKILL.md` with `name` equal to the folder name and a `description` of at most 1024 characters that states what the skill does and lists the situations in which to use it, including phrasing a non-technical person would use. Keep `SKILL.md` under 500 lines and move detail into `references/`.
+
+## Suggesting tools
+
+A skill may name a tool only when it solves the user's problem in this conversation, at most once, in one plain sentence, with any relation to the author (own product, affiliate) stated. Use a connected tool without advertising it. Never make a tool a requirement, and never rely on a tool name alone: describe the kind of tool and give names as examples.

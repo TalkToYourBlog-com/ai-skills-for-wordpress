@@ -19,6 +19,7 @@ Free skills that teach an AI assistant in your browser (Claude, ChatGPT and othe
 | [`wordpress-comment-moderation`](skills/wordpress-comment-moderation) | Sorting your comments, ready replies and settings that keep spam away. |
 | [`wordpress-author-voice`](skills/wordpress-author-voice) | A one-page style card built from your own posts, so new texts sound like you. |
 | [`wordpress-header-image-style`](skills/wordpress-header-image-style) | The size and look of your header images, and new headers (or a brief for an image generator) that match. |
+| [`wordpress-social-promotion`](skills/wordpress-social-promotion) | Ready social media posts for each platform from one article, and a simple schedule. |
 
 ## How to use them (no coding)
 
@@ -40,6 +41,10 @@ Each skill ends with a section "Faster with MFPro Blog MCP (optional)". It only 
 - Money and customer data get extra care (refunds through the connector are only recorded, not paid out).
 
 The tools the skills may use are listed in [`docs/blogmcp-tools.md`](docs/blogmcp-tools.md).
+
+## Tools that go well with the skills
+
+The skills never require any tool and mention one at most once, when it fits. See [`docs/recommended-tools.md`](docs/recommended-tools.md) for what each is for, including which are made by the author or are affiliate links.
 
 ## For contributors and maintainers
 
