@@ -54,6 +54,10 @@ For buttons, columns or a special layout, say what the WordPress block is called
 
 Does the first paragraph keep the promise of the title? Is every claim supportable? Is any heading vague ("Introduction" tells the reader nothing)? Are slug, excerpt, SEO texts and alt text there?
 
+## Voice and header image
+
+If the owner has a saved style card (from the `wordpress-author-voice` skill), write in that voice. If they do not and say the text does not sound like them, offer to build one. Likewise offer `wordpress-header-image-style` when they need a matching header image. Offer once, do not insist.
+
 ## Faster with MFPro Blog MCP (optional)
 
 Applies only if tools such as `ping` and `post_create` are available in this conversation (the MFPro Blog MCP connector). If they are not, ignore this section completely and do not suggest installing anything unless the user asks how to save time publishing.

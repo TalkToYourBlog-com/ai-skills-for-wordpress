@@ -1,6 +1,6 @@
 # WordPress AI skills
 
-Free skills that teach an AI assistant in your browser (Claude, ChatGPT and others) how to do real WordPress work well: write posts that are ready to publish, check why Google cannot find your site, secure it, speed it up, run a WooCommerce shop, fix a broken site and keep comments under control.
+Free skills that teach an AI assistant in your browser (Claude, ChatGPT and others) how to do real WordPress work well: write posts that are ready to publish, check why Google cannot find your site, secure it, speed it up, run a WooCommerce shop, fix a broken site and keep comments under control, write in your own voice and keep your header images consistent.
 
 **Made for site owners, not programmers.** You do not need VS Code, a terminal or any coding. Each skill talks in plain language, tells you exactly where to click in WordPress (for example *Settings > Reading*), asks for a screenshot when it needs to see something, and writes ready-to-send messages to your hosting support when a fix needs the server.
 
@@ -17,6 +17,8 @@ Free skills that teach an AI assistant in your browser (Claude, ChatGPT and othe
 | [`woocommerce-store-ops`](skills/woocommerce-store-ops) | A ten-minute daily shop routine, sales reviews, safe refunds, product texts, launch checklists. |
 | [`wordpress-troubleshooter`](skills/wordpress-troubleshooter) | Step-by-step help when the site shows an error, a white screen or will not let you in. |
 | [`wordpress-comment-moderation`](skills/wordpress-comment-moderation) | Sorting your comments, ready replies and settings that keep spam away. |
+| [`wordpress-author-voice`](skills/wordpress-author-voice) | A one-page style card built from your own posts, so new texts sound like you. |
+| [`wordpress-header-image-style`](skills/wordpress-header-image-style) | The size and look of your header images, and new headers (or a brief for an image generator) that match. |
 
 ## How to use them (no coding)
 
