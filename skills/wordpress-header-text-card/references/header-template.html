@@ -134,7 +134,16 @@ function drawIllustration() {
     const il = CONFIG.illustration;
     if (!il || !il.svg) return resolve();
     const img = new Image();
-    img.onload = () => { ctx.drawImage(img, il.x * W, il.y * H, il.w * W, il.h * H); resolve(); };
+    img.onload = () => {
+      // keep the drawing's own proportions: fit it inside the box and centre it
+      const m = il.svg.match(/viewBox="s*[-d.]+[s,]+[-d.]+[s,]+([d.]+)[s,]+([d.]+)s*"/);
+      const ratio = m ? parseFloat(m[1]) / parseFloat(m[2]) : (img.naturalWidth && img.naturalHeight ? img.naturalWidth / img.naturalHeight : 1);
+      const bw = il.w * W, bh = il.h * H;
+      let dw = bw, dh = bw / ratio;
+      if (dh > bh) { dh = bh; dw = bh * ratio; }
+      ctx.drawImage(img, il.x * W + (bw - dw) / 2, il.y * H + (bh - dh) / 2, dw, dh);
+      resolve();
+    };
     img.onerror = () => resolve();
     img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(il.svg);
   });
