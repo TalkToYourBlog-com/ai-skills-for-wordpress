@@ -1,4 +1,4 @@
-# WordPress AI skills
+# AI skills for WordPress
 
 Free skills that teach an AI assistant in your browser (Claude, ChatGPT and others) how to do real WordPress work well: write posts that are ready to publish, check why Google cannot find your site, secure it, speed it up, run a WooCommerce shop, fix a broken site and keep comments under control, write in your own voice and keep your header images consistent.
 
@@ -25,7 +25,7 @@ Free skills that teach an AI assistant in your browser (Claude, ChatGPT and othe
 
 ## How to use them (no coding)
 
-1. **Download.** Go to the [Releases page](https://github.com/mjfutera/wordpress-ai-skills/releases) and download the skill files you want (they end in `.skill`). Not there yet? Click the green **Code** button > **Download ZIP**, unzip it, and use the folders inside `skills/`.
+1. **Download.** Go to the [Releases page](https://github.com/mjfutera/ai-skills-for-wordpress/releases) and download the skill files you want (they end in `.skill`). Not there yet? Click the green **Code** button > **Download ZIP**, unzip it, and use the folders inside `skills/`.
 2. **Add them to your AI.**
    - **Claude (claude.ai):** Settings > Capabilities > Skills > upload the `.skill` file (or the zipped skill folder). Turn the skill on.
    - **ChatGPT:** if your plan supports skills or plugins, add the skill there; otherwise create a Project (or a custom GPT) and paste the contents of the skill's `SKILL.md` into its instructions (the optional files in its `references/` folder do not come along; the skill works without them, they only hold extra detail).
