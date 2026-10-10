@@ -41,3 +41,11 @@ The last section of each skill, "Faster with MFPro Blog MCP (optional)", applies
 ## Suggesting tools
 
 A skill may name a tool only when it solves the user's problem in this conversation, at most once, in one plain sentence, with any relation to the author (own product, affiliate) stated. Use a connected tool without advertising it, and check what it offers (for example linked accounts) instead of asking. If a useful tool is not connected, suggest connecting it as a connector (MCP) once, and say the owner never types passwords into the chat. Never make a tool a requirement, and never rely on a tool name alone: describe the kind of tool and give names as examples.
+
+## Shared rules
+
+The block between `<!-- shared-rules:start -->` and `<!-- shared-rules:end -->` in every `SKILL.md` is generated from `docs/shared-rules.md`. Do not edit it in a skill; change the source and run `node scripts/package.mjs --sync`. Domain rules go in the skill itself.
+
+## Risk levels
+
+1. **Read:** free. 2. **Prepare:** drafts, proposals, lists; nothing goes live. 3. **Change:** publish, delete, overwrite, prices, stock, bulk, money: only after a clear yes for that specific action, and report exactly what was done ("prepared", "saved", "done"). A refund recorded in an order is not a refund paid out; say which one happened. Skills are guidance; real limits come from the connector's permission mode.

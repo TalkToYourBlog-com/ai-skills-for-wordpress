@@ -26,7 +26,7 @@ Free skills that teach an AI assistant in your browser (Claude, ChatGPT and othe
 1. **Download.** Go to the [Releases page](https://github.com/mjfutera/wordpress-ai-skills/releases) and download the skill files you want (they end in `.skill`). Not there yet? Click the green **Code** button > **Download ZIP**, unzip it, and use the folders inside `skills/`.
 2. **Add them to your AI.**
    - **Claude (claude.ai):** Settings > Capabilities > Skills > upload the `.skill` file (or the zipped skill folder). Turn the skill on.
-   - **ChatGPT:** if your plan supports skills or plugins, add the skill there; otherwise create a Project (or a custom GPT) and paste the contents of the skill's `SKILL.md` into its instructions.
+   - **ChatGPT:** if your plan supports skills or plugins, add the skill there; otherwise create a Project (or a custom GPT) and paste the contents of the skill's `SKILL.md` into its instructions (the optional files in its `references/` folder do not come along; the skill works without them, they only hold extra detail).
    - Other assistants that accept `SKILL.md` folders can load them as they are.
 3. **Just ask.** For example: "Write a blog post about ... for my WordPress site", "My WordPress site shows a critical error", "Why does my shop not show up on Google?". The skill starts by itself when your question matches.
 
@@ -40,6 +40,16 @@ Each skill ends with a section "Faster with MFPro Blog MCP (optional)". It only 
 - Text found on your site (comments, posts, reviews) is treated as material to read, never as instructions.
 - Money and customer data get extra care (refunds through the connector are only recorded, not paid out).
 
+### What the skills may do, by risk
+
+| Level | What | Rule |
+| --- | --- | --- |
+| 1. Read | Look at posts, comments, settings, reports | Allowed freely |
+| 2. Prepare | Drafts, proposed texts, lists of changes | Saved as drafts or shown as a table; nothing goes live |
+| 3. Change | Publish, delete, overwrite, change prices or stock, bulk changes, anything with money | Only after your clear yes for that specific action |
+
+**A skill is a set of instructions, not a lock.** What the AI can actually do on your site is limited by the permissions you gave the connector (full, drafts only, read only) and by your WordPress roles. Choose the narrowest mode that does the job.
+
 The tools the skills may use are listed in [`docs/blogmcp-tools.md`](docs/blogmcp-tools.md).
 
 ## Tools that go well with the skills
@@ -48,7 +58,7 @@ The skills never require any tool and mention one at most once, when it fits. Se
 
 ## For contributors and maintainers
 
-Skills are folders with a `SKILL.md`. Please keep the audience in mind (see [`docs/writing-guidelines.md`](docs/writing-guidelines.md)). To check and package them: `node scripts/package.mjs` (validates, then builds `dist/<skill>.skill`); use `--check` to only validate. Corrections and new skills are welcome as pull requests.
+Skills are folders with a `SKILL.md`. Please keep the audience in mind (see [`docs/writing-guidelines.md`](docs/writing-guidelines.md)). To check and package them: `node scripts/package.mjs` (validates, then builds `dist/<skill>.skill`); use `--check` to only validate. The rules shared by all skills live in [`docs/shared-rules.md`](docs/shared-rules.md); edit that file and run `node scripts/package.mjs --sync` to copy it into every skill (a skill file contains only its own folder, so each skill carries its own copy, and the check fails if a copy differs). Corrections and new skills are welcome as pull requests.
 
 ## License
 
