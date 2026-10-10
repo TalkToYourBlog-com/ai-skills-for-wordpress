@@ -63,6 +63,11 @@ for (const name of skills) {
   }
 }
 
+// The header page template is shipped inside two skills (each .skill holds only its own folder); keep the copies identical.
+const tplA = path.join(skillsDir, 'wordpress-header-text-card', 'references', 'header-template.html')
+const tplB = path.join(skillsDir, 'wordpress-header-illustration', 'references', 'header-template.html')
+if (existsSync(tplA) && existsSync(tplB) && readFileSync(tplA, 'utf8') !== readFileSync(tplB, 'utf8')) problems.push('header-template.html differs between wordpress-header-text-card and wordpress-header-illustration')
+
 if (problems.length) {
   console.error('Problems found:\n- ' + problems.join('\n- '))
   process.exit(1)

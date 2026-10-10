@@ -19,6 +19,8 @@ Free skills that teach an AI assistant in your browser (Claude, ChatGPT and othe
 | [`wordpress-comment-moderation`](skills/wordpress-comment-moderation) | Sorting your comments, ready replies and settings that keep spam away. |
 | [`wordpress-author-voice`](skills/wordpress-author-voice) | A one-page style card built from your own posts, so new texts sound like you. |
 | [`wordpress-header-image-style`](skills/wordpress-header-image-style) | The size and look of your header images, and new headers (or a brief for an image generator) that match. |
+| [`wordpress-header-text-card`](skills/wordpress-header-text-card) | A finished header with your title on your brand colours, made in the chat, with a Download button. |
+| [`wordpress-header-illustration`](skills/wordpress-header-illustration) | A simple flat illustration about your topic plus the title, as a finished header you download. |
 | [`wordpress-social-promotion`](skills/wordpress-social-promotion) | Ready social media posts for each platform from one article, and a simple schedule. |
 
 ## How to use them (no coding)

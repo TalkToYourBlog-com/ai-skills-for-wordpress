@@ -7,12 +7,11 @@ The skills work on their own. These tools save time when you already use them or
 | Tool | What for | Used by |
 | --- | --- | --- |
 | [MFPro Blog MCP](https://blogmcp.michalfutera.pro) (by the author) | Lets your AI read and prepare things in your WordPress directly (drafts, media, comments, SEO fields) instead of copy and paste. First month free; you stay in control. | all skills |
-| [Canva](https://www.canva.com) (independent) | Reusable templates for header images and social graphics, exported at an exact size. A Canva connector lets the AI create and export designs for you. | `wordpress-header-image-style`, `wordpress-social-promotion` |
 | [Zernio](https://zernio.link/michal-futera) (affiliate link) | Plan and schedule posts for many social networks from one place. A connector lets the AI prepare them as drafts or scheduled posts for you to approve. | `wordpress-social-promotion` |
 
 ## How to connect a tool to your AI
 
-Canva, Zernio and MFPro Blog MCP can be added to a browser AI as a connector (MCP). In Claude open Settings > Connectors; in ChatGPT open Settings > Apps (or Connectors, depending on your plan); search for the service or add its address, then sign in on the service's own page. The names of menus change from time to time. Once connected, the skills can see what you have (for example which social networks are linked in Zernio) and work with it directly, always asking before anything is published or overwritten. You never type a password into the chat.
+Zernio and MFPro Blog MCP can be added to a browser AI as a connector (MCP). In Claude open Settings > Connectors; in ChatGPT open Settings > Apps (or Connectors, depending on your plan); search for the service or add its address, then sign in on the service's own page. The names of menus change from time to time. Once connected, the skills can see what you have (for example which social networks are linked in Zernio) and work with it directly, always asking before anything is published or overwritten. You never type a password into the chat.
 
 ## How the skills treat tools
 
