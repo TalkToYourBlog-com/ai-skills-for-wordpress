@@ -253,6 +253,48 @@
         "Offers one round of changes and an honest fallback if the drawing is too crude",
         "Replies in Polish"
       ]
+    },
+    {
+      "id": "upload-cloud-sandbox",
+      "skill": "wordpress-header-text-card",
+      "connector": true,
+      "scenario": "Connector connected (ping ok, mode full; media_upload, media_upload_link, media_list, media_update available). Cloud chat: the assistant has a code sandbox but NO shell on the owner's computer. The owner just downloaded the finished header (PNG, about 380 KB) to their own computer and says so.",
+      "user": "Mam już pobrany nagłówek na dysku (PNG, ok. 380 KB). Wgraj go na bloga i ustaw tekst alternatywny \"Pięć roślin w ciemnym mieszkaniu\".",
+      "assertions": [
+        "Calls media_upload_link with the alt text and a file name (does not try to paste the 380 KB file as base64 into media_upload)",
+        "Gives the owner the link and asks them to open it in the browser and drop the file (not a curl command for the owner to run)",
+        "Says the link works once and for about 10 minutes",
+        "After the owner confirms, looks the item up with media_list and reports what is actually stored (does not claim success before checking)",
+        "Replies in Polish"
+      ]
+    },
+    {
+      "id": "upload-local-shell",
+      "skill": "wordpress-header-text-card",
+      "connector": true,
+      "scenario": "Connector connected (ping ok, mode full). The assistant runs in Claude Code on the owner's computer: it can run shell commands, reach the internet, and the finished header is a file header.png in the current folder (PNG, about 420 KB).",
+      "user": "Nagłówek jest zapisany jako header.png w tym folderze. Wgraj go na bloga, alt: \"Jak zacząć biegać po czterdziestce\".",
+      "assertions": [
+        "Calls media_upload_link (with the alt text and a file name), then uploads the file itself with curl --upload-file to the returned URL",
+        "Does not ask the owner to open a browser or upload anything manually",
+        "Does not paste the file as base64 into media_upload",
+        "Reads the result back (media_list or the response) and reports the real media id or address",
+        "Replies in Polish"
+      ]
+    },
+    {
+      "id": "upload-curl-403",
+      "skill": "wordpress-post-writer",
+      "connector": true,
+      "scenario": "Connector connected (ping ok, mode full). Cloud chat with a code sandbox. The assistant already called media_upload_link and got an upload_url; its curl --upload-file to that URL from the sandbox returned HTTP 403 (the sandbox allows only a few hosts). The header file is on the owner's computer.",
+      "user": "Wgraj ten nagłówek do wpisu. (Wynik curl z sandboxa: HTTP 403 Forbidden.)",
+      "assertions": [
+        "Explains that the 403 comes from the sandbox blocking the host and that the connector is not broken (does not say the blog or connector is down)",
+        "Does not retry curl in a loop and does not try to paste a large file as base64",
+        "Gives the owner the same upload link to open in the browser and drop the file",
+        "Does not claim the image is uploaded before the owner confirms and the item is verified with media_list",
+        "Replies in Polish"
+      ]
     }
   ]
 }

@@ -1,7 +1,8 @@
 // Validates every skill folder and (without --check) builds dist/<skill>.skill zip files.
 //   node scripts/package.mjs          -> validate + build
 //   node scripts/package.mjs --check  -> validate only
-//   node scripts/package.mjs --sync   -> copy docs/shared-rules.md into every SKILL.md, then validate + build
+//   node scripts/package.mjs --sync   -> copy docs/shared-rules.md into every SKILL.md (and docs/image-upload.md into the
+//                                         skills listed in UPLOAD_SKILLS), then validate + build
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs'
 import { spawnSync } from 'node:child_process'
 import path from 'node:path'
@@ -19,6 +20,12 @@ const START = '<!-- shared-rules:start -->'
 const END = '<!-- shared-rules:end -->'
 const shared = readFileSync(path.join(root, 'docs', 'shared-rules.md'), 'utf8').replace(/\r\n/g, '\n').trim()
 const sharedBlock = `${START}\n${shared}\n${END}`
+
+// The image-upload routes are needed by the skills that produce or place pictures: the same copy in each.
+const UPLOAD_START = '<!-- image-upload:start -->'
+const UPLOAD_END = '<!-- image-upload:end -->'
+const UPLOAD_SKILLS = ['wordpress-header-text-card', 'wordpress-header-illustration', 'wordpress-header-image-style', 'wordpress-post-writer']
+const uploadBlock = `${UPLOAD_START}\n${readFileSync(path.join(root, 'docs', 'image-upload.md'), 'utf8').replace(/\r\n/g, '\n').trim()}\n${UPLOAD_END}`
 
 const problems = []
 const skills = readdirSync(skillsDir).filter((name) => statSync(path.join(skillsDir, name)).isDirectory())
@@ -41,6 +48,17 @@ for (const name of skills) {
     writeFileSync(file, text)
   } else if (a === -1 || b < a || text.slice(a, b + END.length) !== sharedBlock) {
     problems.push(`${name}: shared rules block is missing or differs from docs/shared-rules.md (run with --sync)`)
+  }
+  if (UPLOAD_SKILLS.includes(name)) {
+    const ua = text.indexOf(UPLOAD_START)
+    const ub = text.indexOf(UPLOAD_END)
+    if (sync) {
+      if (ua !== -1 && ub > ua) text = text.slice(0, ua) + uploadBlock + text.slice(ub + UPLOAD_END.length)
+      else text = text.trimEnd() + '\n\n' + uploadBlock + '\n'
+      writeFileSync(file, text)
+    } else if (ua === -1 || ub < ua || text.slice(ua, ub + UPLOAD_END.length) !== uploadBlock) {
+      problems.push(`${name}: image upload block is missing or differs from docs/image-upload.md (run with --sync)`)
+    }
   }
   const match = text.match(/^---\n([\s\S]*?)\n---\n/)
   if (!match) {

@@ -7,7 +7,7 @@ The skills reference these [MFPro Blog MCP](https://blogmcp.michalfutera.pro) to
 | Session | `ping` (blog and permissions) |
 | Posts and pages | `post_list`, `post_get`, `post_create`, `post_update`, `page_list`, `revision_list`, `revision_restore` |
 | Taxonomy | `category_list`, `tag_list` |
-| Media | `media_list`, `media_update`, `media_upload` (PNG only) |
+| Media | `media_list`, `media_get` (with the `sizes` WordPress generated), `media_update`, `media_edit` (rotate/crop, saved as a new item), `media_upload` (PNG only; small files), `media_upload_link` (one-time upload link: `curl`, or a page the owner opens in the browser) |
 | Comments | `comment_list`, `comment_get`, `comment_update`, `comment_create` |
 | SEO plugin fields | `seo_get`, `seo_update` (only with Yoast, Rank Math or All in One SEO) |
 | Site | `settings_get`, `plugin_list`, `theme_list`, `user_list`, `activity_list` |

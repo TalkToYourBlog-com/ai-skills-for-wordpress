@@ -1,0 +1,12 @@
+### Getting an image into the blog
+
+Pick the route by what is true in this conversation. Whatever you choose, read the result back with `media_list` and report what is really stored.
+
+1. **You can run shell commands and reach the internet, and the file is on your side** (Claude Code, the desktop app, other clients running on the owner's computer). Call `media_upload_link` (set the file name, alt text and the post to attach to), then `curl --fail-with-body --upload-file image.png "<upload_url>"`. Nothing manual is needed from the owner.
+2. **A chat in the cloud, or the file is on the owner's device.** The sandbox of a cloud chat usually cannot reach the connector's server: a `403` from `curl` means that, not that the connector is broken. Call `media_upload_link` and give the owner the link: "Open this link in your browser and drop the image there; it goes straight to your media library." A JPG, WebP or GIF is converted to PNG on that page. When the owner says it is done, find the new item with `media_list` (newest first) and carry on. The link works once and for 10 minutes; ask for a new one if it expires.
+3. **A tiny file** (a few KB, such as an icon): `media_upload` with `content_base64`. Do not use this for a larger picture: you would have to write out every character, a single wrong one corrupts the file, and it fills the conversation.
+4. **A public https address of a PNG:** `media_upload` with `source_url`.
+
+Tell the owner once that the desktop app or Claude Code can add images without this extra step. Only PNG is accepted by the tools. If `media_upload_link` is not available, use route 3 or 4, or give the manual steps (Media > Add New).
+
+**Pictures that are already on the blog.** WordPress keeps smaller copies of every uploaded image; `media_get` lists them under `sizes` (`large` is 1024 px wide, then 1536 and 2048). In post content use the url of `large` (or `1536x1536` for wide layouts), not the full-size file: that is what makes image-heavy pages fast, and it needs no new upload. The featured image is set by id and WordPress picks the size itself. A picture that needs turning or trimming: `media_edit` (rotate and crop as percentages) saves the result as a new item with the alt text copied, the original stays; point the post at the new id or url, and remove the old item with `media_delete` only when nothing uses it any more (ask first, it cannot be undone). There is no tool that shrinks or compresses an existing file.
