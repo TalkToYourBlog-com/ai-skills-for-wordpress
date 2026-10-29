@@ -8,6 +8,7 @@ The skills work on their own. These tools save time when you already use them or
 | --- | --- | --- |
 | [MFPro Blog MCP](https://blogmcp.michalfutera.pro) (by the author) | Lets your AI read and prepare things in your WordPress directly (drafts, media, comments, SEO fields) instead of copy and paste. First month free; you stay in control. | all skills |
 | [Zernio](https://zernio.link/michal-futera) (affiliate link) | Plan and schedule posts for many social networks from one place. A connector lets the AI prepare them as drafts or scheduled posts for you to approve. | `wordpress-social-promotion` |
+| [TalkToYourBlog Plugin Editor](https://github.com/TalkToYourBlog-com/plugin-editor) (by the author) | A free WordPress plugin. Lets your AI write a small standalone plugin of its own, through the WordPress Abilities API, for a fix that genuinely needs file access — never an existing plugin, never itself. | `wordpress-security-hardening`, `wordpress-troubleshooter` |
 
 ## How to connect a tool to your AI
 
